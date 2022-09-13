@@ -138,6 +138,7 @@ body {
         font-size: 138px;
     }
 }
+
 /* LAPTOP */
 
 @media screen and (min-width:992px) {
@@ -173,6 +174,7 @@ body {
         border: solid blue;
     } */
 }
+
 /* ACTUALMENTE NO EN USO PERO MUY UTIL PARA BOXES
 .glass {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -243,6 +245,7 @@ body {
 
 #products {
     height: 100vh;
+    
 }
 
 #h2 {
@@ -253,66 +256,78 @@ body {
     color: #000000;
 }
 
-/* nav{
-    width: 150px;
-    margin: auto;
-    background: #333;
-    font-size: 20px;
-    margin-top: 50px;
-    z-index: 1;
+.nav {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+}
+
+  .nav * {
+    box-sizing: border-box;
+    transition: all .35s ease;
+}
+
+.nav li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: .5em 1em;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.nav a {
+    padding: .5em .8em;
+    color: rgba(255,255,255,.5);
     position: relative;
-    margin-bottom: 20px;
-    
-}
-.menu-horizontal{
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    border-width: 1px;
-    border-style: solid;
-}
-.menu-horizontal >li >a{
-    display: block;
-    padding: 15px 10px;
-    color: black;
     text-decoration: none;
-    font-weight: bold;
-    margin: auto;
-    
+    font-size: 15px;
 }
-.menu-horizontal > li:hover{
-    background-color: #da0641;
-}
-.menu-vertical{
+
+.nav a::before,
+.nav a::after {
+    content: '';
+    height: 14px;
+    width: 14px;
     position: absolute;
-    display: none;
-    list-style: none;
-    background-color: #da0641;
+    transition: all .35s ease;
+    opacity: 0;
 }
-.menu-horizontal li:hover .menu-vertical{
-    display: block;
-    border-style: solid;
-    border-color: black;
+
+.nav a::before {
+    content: '';
+    right: 0;
+    top: 0;
+    border-top: 3px solid #13f1fc;
+    border-right: 3px solid #d40078;
+    transform: translate(-100%, 50%);
 }
-.menu-vertical li:hover{
-    background-color: #2de2e6;
+
+.nav a:after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid #13f1fc;
+    border-left: 3px solid #d40078;
+    transform: translate(100%, -50%)
 }
-.menu-vertical li a{
-    display: block;
-    color: black;
-    padding: 15px 15px 15px 20px;
-    text-decoration: none;
-    border-style: solid;
-    border-color: black;
-} */
+
+.nav a:hover:before,
+.nav a:hover:after{
+    transform: translate(0,0);
+    opacity: 1;
+}
+.nav a:hover {
+    color: #fff;
+}
 
 #container{
-    max-width: 900px;
+    max-width: 800px;
     margin:auto;
     display:flex;
     flex-wrap: wrap;  
     flex-direction: row;
-    justify-content: center;  
+    justify-content: center; 
+     
 }
 #container .card{
     position:relative;
@@ -466,28 +481,51 @@ body {
         -1px 1px 0 #13f1fc;
     }
 }
-/*TABLET PRODUCTS*/
-@media screen and (min-width:600px){
-    #container .card{
-        width: 180px;
-        height: 220px;
-        /* top: 100px;  */
-        margin:5px 5px 10px 5px;
-    }
+
+
+.contenedor{
+    background: url(img/.jpg) no-repeat center;
+    background-size:cover;
+    padding: 50px 40px;
+    text-align: center;
+    color: white;
+
 }
-/* LAPTOP PRODUCTS*/
-@media screen and (min-width:992px){
-    #container .card{
-        width: 180px;
-        height: 230px;
-        margin:5px 5px 10px 5px;
-    
+.contenedor p {
+    max-width: 600px;
+    margin: 1px auto;
+    font-size: 15px;
+    font-weight: 300;
 }
-/*COMPUTER PRODUCTS*/
-@media screen and (min-width:1200px){
-    #container .card{
-        width: 180px;
-        height: 240px;
-        margin:5px 5px 10px 5px;
-    }
+.email-box{
+    height: 40px;
+    justify-content: center;
+    display: inline-flex; 
+    margin-top: 10px;
+    max-width: 150px;
+}
+.email-box .icono{
+    background: #2f3542;
+    width: 10px;
+    background-image: url(img/iconomsj2.jpg);
+    height: 40px;
+}
+.tbox,.btn{
+    border: none;
+    outline: none;
+}
+.tbox{
+    width: 0px;
+    transition: 0.6s;
+}
+.email-box:hover > .tbox,.tbox:focus{
+    width: 260px;
+    padding: 0 10px;
+}
+.btn{
+    background: #2f3542;
+    color: white;
+    padding: 0 10px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
